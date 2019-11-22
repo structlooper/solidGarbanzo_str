@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use App\User;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
@@ -52,6 +53,11 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'contact' => ['required'],
+            'gender' => ['required', 'string', 'max:255'],
+            'profile' => ['required', 'string', 'max:255'],
+            'address' => ['required', 'string', 'max:255'],
+            
         ]);
     }
 
@@ -62,10 +68,26 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {
+    {   
+        $request = request();
+
+        $profileImage = $request->file('profileImage');
+        $profileImageSaveAsName = time() . Auth::id() . "-profile." . 
+                                  $profileImage->getClientOriginalExtension();
+
+        $upload_path = 'profile_images/';
+        $profile_image_url = $upload_path . $profileImageSaveAsName;
+        $success = $profileImage->move($upload_path, $profileImageSaveAsName);
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'contact' => $data['contact'],
+            'gender' => $data['gender'],
+            'profile' => $data['profile'],
+            'address' => $data['address'],
+            'status' => $data['status'],
+            'image' => $profile_image_url,
             'password' => Hash::make($data['password']),
         ]);
     }
