@@ -29,7 +29,15 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    // protected $redirectTo = '/home';
+    protected function redirectTo()
+    {
+        
+            Auth::logout();
+            return 'index';
+           
+
+    }
 
     /**
      * Create a new controller instance.
@@ -86,7 +94,6 @@ class RegisterController extends Controller
             'gender' => $data['gender'],
             'profile' => $data['profile'],
             'address' => $data['address'],
-            'status' => $data['status'],
             'image' => $profile_image_url,
             'password' => Hash::make($data['password']),
         ]);

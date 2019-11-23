@@ -11,6 +11,9 @@
 |
 */
 
+Route::get('/index', function () {
+    return view('welcome');
+});
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,3 +21,29 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+    Route::group(['middleware' => ['auth','approved']], function () {
+
+        Route::get('/adminDashboard', function(){
+            return view('superAdmin.adminDas');
+        });
+
+    });
+    Route::group(['middleware' => ['auth','teacher']], function () {
+    
+        route::get('/teacherPortel',function(){
+            return view('teacher.teacher');
+        });
+        
+    });
+    Route::group(['middleware' => ['auth','student']], function () {
+    
+    
+        route::get('/studentPortel',function(){
+            return view('student.student');
+        });
+        
+    });
+    

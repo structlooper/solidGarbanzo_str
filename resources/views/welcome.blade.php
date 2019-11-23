@@ -64,7 +64,13 @@
         </style>
     </head>
     <body>
+        <div class="container">
+                <div class="alert alert-danger" role="alert">
+                        {{session('status')}}
+                    </div>
+        </div>
         <div class="flex-center position-ref full-height">
+            
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth

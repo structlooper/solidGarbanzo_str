@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -25,8 +27,38 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
-
+    // protected $redirectTo = '/home';
+    protected function redirectTo()
+    {
+        if (Auth::User()->profile == 'admin' and Auth::User()->status == 'admin') 
+        {
+            return 'adminDashboard';
+        }
+        else
+        {
+            
+            if (Auth::User()->status != 'pending') 
+            {
+                
+                if(Auth::User()->profile == 'teacher')
+                {
+                    return 'teacherPortel';
+                }
+                elseif(Auth::User()->profile == 'student')
+                {
+                    return 'studentPortel';
+                }
+            }
+            else
+            {   
+            Auth::logout();
+            
+            return ('/login');
+            
+            }
+        }
+        
+    }
     /**
      * Create a new controller instance.
      *
@@ -34,6 +66,9 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        // if (Auth::User()->status != 'pending') {
         $this->middleware('guest')->except('logout');
+        
     }
+    
 }
