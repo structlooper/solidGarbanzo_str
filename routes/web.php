@@ -26,18 +26,19 @@ Route::get('/home', 'HomeController@index')->name('home');
 
     Route::group(['middleware' => ['auth','approved']], function () {
 
-        Route::get('/adminDashboard', function(){
-            return view('superAdmin.adminDas');
-        });
+        Route::get('/adminDashboard', 'admin\AdminController@view');
+        Route::put('/profileApprove/{id}','admin\AdminController@profileApprove');
 
     });
     Route::group(['middleware' => ['auth','teacher']], function () {
     
-        route::get('/teacherPortel',function(){
+        route::get('/teacherPortel', function(){
             return view('teacher.teacher');
         });
         
     });
+        
+    // });
     Route::group(['middleware' => ['auth','student']], function () {
     
     

@@ -58,7 +58,7 @@
                                     <div class="col-md-4">
                                         <div class="input-group-prepend">
                                             <div class="input-group-text">
-                                            <input type="radio" aria-label="Radio button for following text input" name='gender'>
+                                            <input type="radio" aria-label="Radio button for following text input" value="male" name='gender'>
                                             </div>
                                             male
                                         </div>
@@ -68,7 +68,7 @@
                                     <div class="col-md-4">
                                         <div class="input-group-prepend">
                                             <div class="input-group-text">
-                                            <input type="radio" aria-label="Radio button for following text input" name='gender'>
+                                            <input type="radio" aria-label="Radio button for following text input" value="female" name='gender'>
                                             </div>
                                             Female
                                         </div>
@@ -77,7 +77,7 @@
                                     <div class="col-md-4">
                                         <div class="input-group-prepend">
                                             <div class="input-group-text">
-                                            <input type="radio" aria-label="Radio button for following text input" name='gender'>
+                                            <input type="radio" aria-label="Radio button for following text input" value="other" name='gender'>
                                             </div>
                                         others
                                         </div>
