@@ -39,7 +39,7 @@
                                         <td>{{ $data->Semester }}</td>
                                         <td>{{ $data->Deadline }}</td>
                                         <td>{{ $data->file }}</td>
-                                        <td> <a href="#" class="btn btn-danger">Download</a>
+                                        <td> <a href="\uploades\techer\assinment\{{$data->file}}" class="btn btn-danger" download="{{$data->file}}">Download</a>
                                         <td> <a href="#" class="btn btn-success">Upload File</a>
                                         </td>
                                             

@@ -46,6 +46,5 @@ Route::get('/home', 'HomeController@index')->name('home');
         
         route::get('/studentPortel','student\StudentController@view');
         route::get('/studentPortel/assigmentsList', 'student\StudentController@assigmentsList');
-        
     });
     
