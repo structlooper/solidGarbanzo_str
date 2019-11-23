@@ -28,14 +28,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 
         Route::get('/adminDashboard', 'admin\AdminController@view');
         Route::put('/profileApprove/{id}','admin\AdminController@profileApprove');
-
+        
     });
     Route::group(['middleware' => ['auth','teacher']], function () {
-    
-        route::get('/teacherPortel', function(){
-            return view('teacher.teacher');
-        });
+        Route::get('/teacherPortel', 'teacher\TeacherController@view');
         
+        Route::get('/teacherPortel/newUpload','teacher\TeacherController@NewUpload');
+        Route::get('/teacherPortel/ShowDetails','teacher\TeacherController@ShowDetails');
+        Route::post('/saveFileDetails', 'teacher\TeacherController@saveFileDetails');
     });
         
     // });

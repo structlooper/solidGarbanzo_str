@@ -1,4 +1,9 @@
 @extends('layouts.app')
+
+@section('title')
+    Admin | dashboard
+@show
+
 @section('content')
 <div class="container border">
     <h1 class="text-center">Welcome to admin dashboard</h1>
