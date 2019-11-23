@@ -13,16 +13,18 @@ class TeacherController extends Controller
     {
         return view('teacher.teacher');
     }
+    function ShowDetails(request $request)
+    {
+        $upload_assignment_details = upload_assignment_detail::all();
+        return view('teacher.ShowDetails')->with('upload_assignment_details',$upload_assignment_details);
+    }
 
     public function NewUpload()
     {
         return view('teacher.NewUpload');
     }
-    public function ShowDetails()
-    {
-        return view('teacher.ShowDetails');
-    }
-    public function saveFileDetails(request $request)
+
+    function saveFileDetails(request $request)
     {
         $upload_assignment_details = new upload_assignment_detail();
 
@@ -49,5 +51,10 @@ class TeacherController extends Controller
         $upload_assignment_details->save();
         return redirect()->back()->with('status', 'File uploaded successfully.');
        
+    }
+
+    public function SubmitedDetails()
+    {
+        return view('teacher.SubmitedDetails');
     }
 }

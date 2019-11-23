@@ -31,20 +31,21 @@ Route::get('/home', 'HomeController@index')->name('home');
         
     });
     Route::group(['middleware' => ['auth','teacher']], function () {
-        Route::get('/teacherPortel', 'teacher\TeacherController@view');
         
+        Route::get('/teacherPortel', 'teacher\TeacherController@view');
         Route::get('/teacherPortel/newUpload','teacher\TeacherController@NewUpload');
         Route::get('/teacherPortel/ShowDetails','teacher\TeacherController@ShowDetails');
         Route::post('/saveFileDetails', 'teacher\TeacherController@saveFileDetails');
+        
+        Route::get('/teacherPortel/SubmitedDetails','teacher\TeacherController@SubmitedDetails');
+
     });
         
     // });
     Route::group(['middleware' => ['auth','student']], function () {
-    
-    
-        route::get('/studentPortel',function(){
-            return view('student.student');
-        });
+        
+        route::get('/studentPortel','student\StudentController@view');
+        route::get('/studentPortel/assigmentsList', 'student\StudentController@assigmentsList');
         
     });
     

@@ -22,7 +22,10 @@
                             <a class="nav-link mt-2 pl-0 btn btn-primary text-light" href="/teacherPortel/newUpload">Upload New <br> Assignment</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link mt-2 pl-0 btn btn-primary text-light" href="/teacherPortel/ShowDetails">Show Details<br> Assignment</a>
+                            <a class="nav-link mt-2 pl-0 btn btn-primary text-light" href="/teacherPortel/ShowDetails">Show  Assignment<br> Details</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mt-2 pl-0 btn btn-primary text-light" href="/teacherPortel/SubmitedDetails">Submited Assignment<br> Details</a>
                         </li>
                         
                         
