@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-<div class="container border">
+<div class="container border rounded-circle">
         <h1 class="text-center">Welcome to Student Portal</h1>
 </div>
 <div class="container h-100">

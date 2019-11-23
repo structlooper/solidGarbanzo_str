@@ -46,5 +46,8 @@ Route::get('/home', 'HomeController@index')->name('home');
         
         route::get('/studentPortel','student\StudentController@view');
         route::get('/studentPortel/assigmentsList', 'student\StudentController@assigmentsList');
+        route::get('/studentPortel/uploadAnswer/{id}', 'student\StudentController@uploadAnswer');
+        route::post('/SubmitAnswer', 'student\StudentController@SubmitAnswer');
+        
     });
     
