@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\student;
 
 use DB;
+use App\User;
 use App\assignment_answer;
 use Illuminate\Http\Request;
 use App\upload_assignment_detail;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class StudentController extends Controller
 {
@@ -51,5 +53,23 @@ class StudentController extends Controller
 
         // return $request;
        
+    }
+
+    public function editStudentProfile()
+    {
+        $user = Auth::user();
+        return view('student.editStudentProfile')->with('user',$user);
+    }
+
+    public function updatingStudent(request $request , $id)
+    {
+        $user = User::find($id);
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->contact = $request->input('contact');
+        $user->gender = $request->input('gender');
+        $user->address = $request->input('address');
+        $user->update();
+        return  \redirect('/studentPortel')->with('status', 'profile Updated successfuly');
     }
 }

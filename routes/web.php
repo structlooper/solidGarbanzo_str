@@ -42,7 +42,7 @@ Route::get('/home', 'HomeController@index')->name('home');
         
         Route::get('/teacherPortel/SubmitedDetails','teacher\TeacherController@SubmitedDetails');
         Route::get('/editTeacherProfile','teacher\TeacherController@editTeacherProfile');
-        Route::put('//updatingUser/{id}','teacher\TeacherController@updatingUser');
+        Route::put('/updatingUser/{id}','teacher\TeacherController@updatingUser');
 
     });
         
@@ -54,5 +54,7 @@ Route::get('/home', 'HomeController@index')->name('home');
         route::get('/studentPortel/uploadAnswer/{id}', 'student\StudentController@uploadAnswer');
         route::post('/SubmitAnswer', 'student\StudentController@SubmitAnswer');
         
+        route::get('/editStudentProfile', 'student\StudentController@editStudentProfile');
+        Route::put('/updatingStudent/{id}','student\StudentController@updatingStudent');
+ 
     });
-    
