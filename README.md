@@ -6,7 +6,10 @@ mail-> superAdmin@mail.com <br>
 password-> 12345678 </h1>
 <h2>the all type of users and admin have password [12345678].</h2>
 You have to follow the following steps<br> <br>
+<h2>The Project Screens Are Available In Screens Folder</h2>
+<h3>Dont forget to import soluction.sql file</h3><br>
 go to the folder where you want to colne the project.<br> <br>
+
 --> open terminal and write "git clone https://github.com/strlpr/solidGarbanzo_str.git"<br> <br>
 
 -->now install composer by cmd "composer install"<br> <br>
