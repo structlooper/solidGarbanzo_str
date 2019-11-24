@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -29,7 +30,7 @@ class AdminController extends Controller
     }
     public function updateAdminProfile(request $request)
     {
-        $data = User::findOrFail('1');
+        $data = Auth::user();
         return view('superAdmin.updateProfile')->with('data', $data);
         // return $request;
     }
