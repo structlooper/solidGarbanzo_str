@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\teacher;
 
+use App\assignment_answer;
 use Illuminate\Http\Request;
 use App\upload_assignment_detail;
 use App\Http\Controllers\Controller;
@@ -55,6 +56,7 @@ class TeacherController extends Controller
 
     public function SubmitedDetails()
     {
-        return view('teacher.SubmitedDetails');
+        $assignment_answers = assignment_answer::all();
+        return view('teacher.SubmitedDetails')->with('assignment_answers',$assignment_answers);
     }
 }

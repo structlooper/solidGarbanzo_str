@@ -29,6 +29,7 @@ class StudentController extends Controller
     {
         $assignment_answers = new assignment_answer();
         $assignment_answers->assignment_no = $request->input('assignment_no');
+        $assignment_answers->assignment_detail = $request->input('assignment_detail');
         $assignment_answers->student_semester = $request->input('student_semester');
         $assignment_answers->student_name = $request->input('student_name');
         $assignment_answers->student_rollno = $request->input('student_rollno');
@@ -36,7 +37,7 @@ class StudentController extends Controller
             $file = $request->file('file');
             $extension = $file->getClientOriginalExtension(); //geting extension from image Extension
             $filename =  uniqid() . '.' . $extension;
-            $file->move('uploades/techer/assinment/', $filename);
+            $file->move('uploades/student/answer/', $filename);
             $assignment_answers->file = $filename;
             
         }
@@ -48,7 +49,7 @@ class StudentController extends Controller
         $assignment_answers->save();
         return redirect('/studentPortel/assigmentsList')->with('status', 'Answer Uploaded successfuly');
 
-        
+        // return $request;
        
     }
 }

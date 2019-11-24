@@ -28,7 +28,7 @@
                     </label>
                     <div class="col-sm-9">
                       <input type="text" disabled  value = "{{ $upload_assignment_detail->Assignment_Details }}" class="form-control" >
-                      <input type="hidden" disabled name='upload_assignment_detail' value = "{{ $upload_assignment_detail->Assignment_Details }}" class="form-control" >
+                      <input type="hidden"  name='assignment_detail' value = "{{ $upload_assignment_detail->Assignment_Details }}" class="form-control" >
                     </div>
                   </div>
                   

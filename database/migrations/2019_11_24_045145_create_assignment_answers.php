@@ -17,6 +17,7 @@ class CreateAssignmentAnswers extends Migration
             $table->bigIncrements('id');
             $table->integer('assignment_no');
             $table->integer('student_semester');
+            $table->string('assignment_detail');
             $table->string('student_name');
             $table->string('student_rollno');
             $table->mediumText('file');
