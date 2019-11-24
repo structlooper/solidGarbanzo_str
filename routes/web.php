@@ -27,8 +27,11 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::group(['middleware' => ['auth','approved']], function () {
 
         Route::get('/adminDashboard', 'admin\AdminController@view');
+        Route::get('/userProfiles', 'admin\AdminController@userProfiles');
         Route::put('/profileApprove/{id}','admin\AdminController@profileApprove');
         
+        Route::get('/updateAdminProfile', 'admin\AdminController@updateAdminProfile');
+        Route::put('/updating/{id}','admin\AdminController@updating');
     });
     Route::group(['middleware' => ['auth','teacher']], function () {
         

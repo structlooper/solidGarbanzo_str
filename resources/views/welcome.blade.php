@@ -87,19 +87,20 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Welcome to the project <br>
+                    Home Page
+                </div>
+                <div class="container">
+                    <h3>This is based on the problem which you have given</h3>
+                <br>
+                <h1>Go to login panel and login in admin,teacher,Student to view</h1>
+                <br><h2>And Register Your Self</h2>
+                <p>After regitration you will automatic redirect to home and have to wait for the approvel by SuperAdmin 
+                    <br> then You can login
+                </p>
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                
             </div>
         </div>
     </body>
