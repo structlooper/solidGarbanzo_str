@@ -10,6 +10,12 @@
         <h1 class="text-center">Welcome to Teacher Portal</h1>
 </div>
 <div class="container h-100">
+        @if (session('status'))
+        <div class="alert alert-success" role="alert">
+            {{session('status')}}
+        </div>
+        
+        @endif
     <div class="row h-100">
         <aside class="col-12 col-md-2 p-0 bg-dark">
             <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start">
@@ -26,6 +32,10 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link mt-2 pl-0 btn btn-primary text-light" href="/teacherPortel/SubmitedDetails">Submited Assignment<br> Details</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link mt-2 pl-0 btn btn-primary text-light" href="/editTeacherProfile">Edit Profile<br> Details</a>
                         </li>
                         
                         

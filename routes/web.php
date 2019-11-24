@@ -41,6 +41,8 @@ Route::get('/home', 'HomeController@index')->name('home');
         Route::post('/saveFileDetails', 'teacher\TeacherController@saveFileDetails');
         
         Route::get('/teacherPortel/SubmitedDetails','teacher\TeacherController@SubmitedDetails');
+        Route::get('/editTeacherProfile','teacher\TeacherController@editTeacherProfile');
+        Route::put('//updatingUser/{id}','teacher\TeacherController@updatingUser');
 
     });
         

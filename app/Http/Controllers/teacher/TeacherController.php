@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\teacher;
 
+use App\User;
 use App\assignment_answer;
 use Illuminate\Http\Request;
 use App\upload_assignment_detail;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\Console\Input\Input;
 
 class TeacherController extends Controller
@@ -58,5 +60,23 @@ class TeacherController extends Controller
     {
         $assignment_answers = assignment_answer::all();
         return view('teacher.SubmitedDetails')->with('assignment_answers',$assignment_answers);
+    }
+
+    public function editTeacherProfile(request $request)
+    {
+        $user = Auth::user();
+        return view('teacher.editTeacherProfile')->with('user', $user);
+    }
+ 
+    public function updatingUser(request $request , $id)
+    {
+        $user = User::find($id);
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->contact = $request->input('contact');
+        $user->gender = $request->input('gender');
+        $user->address = $request->input('address');
+        $user->update();
+        return  \redirect('/teacherPortel')->with('status', 'profile Updated successfuly');
     }
 }
