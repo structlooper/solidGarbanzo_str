@@ -10,7 +10,7 @@ You have to follow the following steps<br> <br>
 <h3>Dont forget to import soluction.sql file</h3><br>
 go to the folder where you want to colne the project.<br> <br>
 
---> open terminal and write "git clone https://github.com/strlpr/solidGarbanzo_str.git"<br> <br>
+--> open terminal and write "git clone https://github.com/structlooper/solidGarbanzo_str.git"<br> <br>
 
 -->now install composer by cmd "composer install"<br> <br>
 
